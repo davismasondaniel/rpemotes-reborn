@@ -8,7 +8,7 @@ Config = {
     MenuKeybind = 'F4',
 
     Keybinding = true, -- If set to false, disables the use of Config.KeybindKeys
-    keybindKVP = "rpemotes",
+    keybindKVP = "DANIELGDM180rpemotes",
     NotificationsAsChatMessage = false,
     Search = true, -- Used to enable or disable the search feature in the menu.
     CancelPreviousEmote = false, -- If true, playing an emote will cancel the previous one and play the newly selected emote, if false, some emotes can be combined/played at the same time
@@ -24,7 +24,7 @@ Config = {
 
     -- Realism/Anti-Exploit
     EmoteCooldownMs = nil, -- Emote Cooldown in milliseconds. Prevents switching emotes too quickly. If nil, no cooldown is enforced
-    AbusableEmotesDisabled = true, -- if set to true disables any emotes that could be abused in pvp/serious environments that emotes marked abusable = true
+    AbusableEmotesDisabled = false, -- if set to true disables any emotes that could be abused in pvp/serious environments that emotes marked abusable = true
 
     -- Menu Styling
     MenuTitle = '',
@@ -44,14 +44,14 @@ Config = {
 
     -- Combat Car, and Player Movement
     DisarmPlayerOnEmote = false,
-    AllowPunchingDuringEmote = false,
+    AllowPunchingDuringEmote = true,
     AllowEmoteInVehicle = true,
-    AllowInWater = false,
+    AllowInWater = true,
     AllowOnBikes = true, -- Allow emotes when on a vehicle with handlebars
 
     -- Ragdoll
-    RagdollEnabled = false,
-    RagdollKeybind = 'U',
+    RagdollEnabled = true,
+    RagdollKeybind = 'O',
     RagdollAsToggle = true,
 
     -- Expressions, Walks, and More
@@ -64,9 +64,9 @@ Config = {
     AnimalEmotesEnabled = true,
 
     -- Hands Up
-    HandsupEnabled = false,
-    HandsupKeybind = 'Y',
-    HandsupKeybindEnabled = false,
+    HandsupEnabled = true,
+    HandsupKeybind = 'X',
+    HandsupKeybindEnabled = true,
     HandsupInCar = false,
     ReplayEmoteAfterHandsup = true,
     HoldToHandsUp = false,
@@ -79,7 +79,7 @@ Config = {
     ReplayEmoteAfterPointing = true,
 
     -- Crouching
-    CrouchEnabled = true,
+    CrouchEnabled = false,
     CrouchKeybindEnabled = true,
     CrouchKeybind = 'LCONTROL',
     CrouchOverrideStealthMode = false, -- If true, you won't enter stealth mode even if the crouch key and the 'duck' key are the same.
@@ -91,11 +91,11 @@ Config = {
     CrawlKeybind = 'RCONTROL',
 
     -- Binocular (/binoculars)
-    BinocularsEnabled = false,
-    AllowVisionsToggling = false,
+    BinocularsEnabled = true,
+    AllowVisionsToggling = true,
 
     -- News Camera (/newscam)
-    NewscamEnabled = false,
+    NewscamEnabled = true,
 
     -- Idle Cam
     DisableIdleCam = true,
@@ -115,7 +115,7 @@ Config = {
     RecoverEmotesAfterRagdoll = true, -- If true, the resource will attempt to recover emotes after being bumped / ragdolled. Doesn't work for all.
 
     -- NUI Menu
-    UseNUIMenu = true, -- If true, it will use the NUI menu, instead of the Scaleform one. NativeUI is still driving the emote data in the background.
+    UseNUIMenu = false, -- If true, it will use the NUI menu, instead of the Scaleform one. NativeUI is still driving the emote data in the background.
 }
 
 -- Custom Categories: Define custom categories to organize emotes in the menu
