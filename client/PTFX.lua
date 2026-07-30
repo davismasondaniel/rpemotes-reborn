@@ -41,6 +41,12 @@ AddStateBagChangeHandler('ptfx', '', function(bagName, key, value, _unused, repl
 
         PtfxThis(stateBag.ptfxAsset)
 
+        if not stateBag.ptfx then
+            RemoveNamedPtfxAsset(stateBag.ptfxAsset)
+            PlayerParticles[plyId] = nil
+            return
+        end
+
         local offset = stateBag.ptfxOffset
         local rot = stateBag.ptfxRot
         PlayerParticles[plyId] = StartNetworkedParticleFxLoopedOnEntityBone(stateBag.ptfxName, entityTarget, offset.x, offset.y, offset.z, rot.x, rot.y, rot.z, boneIndex, (stateBag.ptfxScale or 1) + 0.0, false, false, false)

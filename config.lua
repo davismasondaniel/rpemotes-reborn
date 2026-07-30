@@ -8,7 +8,7 @@ Config = {
     MenuKeybind = 'F4',
 
     Keybinding = true, -- If set to false, disables the use of Config.KeybindKeys
-    keybindKVP = "rpemotes",
+    keybindKVP = "DANIELGDM180rpemotes",
     NotificationsAsChatMessage = false,
     Search = true, -- Used to enable or disable the search feature in the menu.
     CancelPreviousEmote = false, -- If true, playing an emote will cancel the previous one and play the newly selected emote, if false, some emotes can be combined/played at the same time

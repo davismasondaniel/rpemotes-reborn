@@ -850,16 +850,20 @@ function OnEmotePlay(name, textureVariation, emoteType)
     end
 
     local flags = animOption?.Flag or movementType or 0
+    -- An explicit Flag bypasses the sync-safe override on handlebar vehicles
+    local applyBikeOverride = vehicleHasHandleBars and not animOption?.Flag
 
     if GetPlacementState() == PlacementState.IN_ANIMATION and animOption and animOption.PlacementOverridesPhysics then
         -- Override physics (allow floating off the ground) & Ragdoll on Collision
         flags += 2048 + 4194304
-    elseif vehicleHasHandleBars then
-        -- Overrides flags to sync animations between clients and force only upperbody
+    elseif applyBikeOverride then
+        -- Overrides flags to sync animations between clients and force only upperbody.
+        -- These exact values were settled on after much trial and error; do not modify
+        -- them. Bike-specific behavior changes belong in an emote's Flag instead.
         flags = 16 + 262144
     end
 
-    PlayAnim(PlayerPedId(), emoteData.dict, emoteData.anim, animOption?.BlendInSpeed or 5.0, animOption?.BlendOutSpeed or 5.0, animOption?.EmoteDuration or -1, flags, 0, false, vehicleHasHandleBars and 4098 or false,
+    PlayAnim(PlayerPedId(), emoteData.dict, emoteData.anim, animOption?.BlendInSpeed or 5.0, animOption?.BlendOutSpeed or 5.0, animOption?.EmoteDuration or -1, flags, 0, false, applyBikeOverride and 4098 or false,
         false)
     RemoveAnimDict(emoteData.dict)
 
