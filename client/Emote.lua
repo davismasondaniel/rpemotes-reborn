@@ -910,6 +910,9 @@ end)
 CreateExport('getCurrentEmote', function()
     return currentEmote
 end)
+CreateExport('IsAnimalEmoteCompatible', function(model, emoteName)
+    return IsModelCompatible(model, emoteName)
+end)
 
 -- Door stuff
 local openingDoor = false
